@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">-->
+    <link href="https://cdn.bootcss.com/mini.css/3.0.1/mini-default.min.css" rel="stylesheet">
+    <title>My First Website</title>
+    <style>
+        input {
+            max-width: 100%;
+        }
+        .center {
+            text-align: center;
+        }
+        .pull-right {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container responsive-margin">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="calculate" method="post">
+                <fieldset>
+                    <legend>Adder</legend>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <label for="a">A = </label>
+                            <input type="text" id="a" name="a" placeholder="a"/>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label for="b">B =</label>
+                            <input type="text" id="b" name="b" placeholder="b"/>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <button type="submit" class="primary pull-right">Add!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if equation %}
+    <div>
+        <h2 class="center">
+            {{ equation.a }} + {{ equation.b }} =
+            <mark class="highlighted">{{ equation.answer }}</mark>
+        </h2>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
